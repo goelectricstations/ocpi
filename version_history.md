@@ -10,7 +10,7 @@ NoDerivatives 4.0 International Public License*<br/>
 <br/>
 **Version History**
 
-<div><!-- ---------------------------------------------------------------------------- --></div>
+
 | Version | Date       | Description                                      |
 |---------|------------|--------------------------------------------------|
 | 2.1     | 08-04-2016 | Added [command module](mod_command.md#commands-module).<br/> Added support for [real-time authorization](mod_tokens.md#222-post-method).<br/> Lots of small improvements: see [changelog](changelog.md#changelog)  |
@@ -18,7 +18,7 @@ NoDerivatives 4.0 International Public License*<br/>
 | 2.0     | 30-12-2015 | First official release of OCPI. |
 | 0.4     | 04-11-2014 | First draft of OCPI. (Also known as Draft v4) |
 | 0.3     | 06-05-2014 | First draft of OCPI. (Also known as Draft v3) |
-<div><!-- ---------------------------------------------------------------------------- --></div>
+
 
 
 

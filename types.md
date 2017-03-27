@@ -19,12 +19,12 @@ Note: +00:00 is not the same as UTC.
     
 ## 1.3 DisplayText *class*
 
-<div><!-- ---------------------------------------------------------------------------- --></div>
+
 | Property        | Type                           | Card. | Description                                                       |
 |-----------------|--------------------------------|-------|-------------------------------------------------------------------|
 | language        | [string](#15-string-type)(2)   | 1     | Language Code ISO 639-1                                           |
 | text            | [string](#15-string-type)(512) | 1     | Text to be displayed to a end user. No markup, html etc. allowed. |
-<div><!-- ---------------------------------------------------------------------------- --></div>
+
 
 Example:
  

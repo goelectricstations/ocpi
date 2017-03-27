@@ -4,8 +4,8 @@ command -v pandoc >/dev/null 2>&1 || { echo >&2 "I require pandoc >1.9.2 but it'
 #############################################
 #############################################
 # adjust these before you release
-PROTOCOL_VERSION="2.0"
-DOCUMENT_VERSION="${PROTOCOL_VERSION}-d2"
+PROTOCOL_VERSION="test-rel"
+DOCUMENT_VERSION="${PROTOCOL_VERSION}"
 OUTFILE="OCPI_${DOCUMENT_VERSION}.pdf"
 RELEASE_DATE=$(date +%d.%m.%Y)
 RELEASE_DIR=${DOCUMENT_VERSION}
@@ -58,23 +58,13 @@ perl -p -i -e 's/(?<=\(#)(\w+)_(\w+)_(\w+)_(\w+)\)/\1-\2-\3-\4)/g' all.md
 perl -p -i -e 's/(?<=\(#)(\w+)_(\w+)_(\w+)\)/\1-\2-\3)/g' all.md
 perl -p -i -e 's/(?<=\(#)(\w+)_(\w+)\)/\1-\2)/g' all.md
 
-# translate MD tables to pandoc 'multiline' tables
-perl -p -i -e 's/<div><!-- //g' all.md
-perl -p -i -e 's/ --><\/div>//g' all.md
-perl -p -i -e 's/^\|[\s-:]/  /g' all.md
-perl -p -i -e 's/\|\s(?=\w)/  /g' all.md
-perl -p -i -e 's/\|(?=\w)/ /g' all.md
-perl -p -i -e 's/[-:]\|[-:]/-  /g' all.md
-perl -p -i -e "s/ \| (?=[^\n])/   /g" all.md
-perl -i -e '$/ = undef; while($all = <>){ $all =~ s/(?<=[\w.!?:\]\)\$*"`~])\s*\|\s*(?=\n\s+[\w?1*+>])/\n\n/g; print $all;}' all.md
-perl -p -i -e 's/\|\s*(?=\n)//g' all.md
 
 pandoc \
-  --template=ocpi.latex \
+  --template=pandoc-default-template.latex \
   -V mainfont="Times"  -V fontsize=10pt --number-sections \
   -V geometry:margin=1in -V papersize:"a4paper" \
   -V title-meta:"Open Charge Point Interface $PROTOCOL_VERSION" -V title:"OCPI $PROTOCOL_VERSION" \
   -V subtitle:"Open Charge Point Interface $PROTOCOL_VERSION, document version: $DOCUMENT_VERSION"\
   -V author:"https://github.com/ocpi" \
   -V author-meta:"OCPI group" -V date:"$RELEASE_DATE" \
-  --include-in-header ocpi-header.tex --toc -f markdown_github+multiline_tables -t latex all.md -o "$OUTFILE" --latex-engine="$LATEX_ENGINE"
+  --include-in-header ocpi-header.tex --toc -f markdown_github -t latex all.md -o "$OUTFILE" --latex-engine="$LATEX_ENGINE"

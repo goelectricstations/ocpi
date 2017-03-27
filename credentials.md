@@ -7,7 +7,7 @@
 
 Example: `/ocpi/cpo/2.0/credentials` and `/ocpi/emsp/2.0/credentials`
 
-<div><!-- ---------------------------------------------------------------------------- --></div>
+
 | Method                      | Description                                                                                       |
 |-----------------------------|---------------------------------------------------------------------------------------------------|
 | [GET](#11-get-method)       | Retrieves the credentials object to access the server's platform.                                 |
@@ -15,7 +15,7 @@ Example: `/ocpi/cpo/2.0/credentials` and `/ocpi/emsp/2.0/credentials`
 | [PUT](#13-put-method)       | Provides the server with an updated credentials object to access the client's system.             |
 | PATCH                       | n/a                                                                                               |
 | [DELETE](#14-delete-method) | Informs the server that its credentials to the client's system are now invalid (i.e. unregister). |
-<div><!-- ---------------------------------------------------------------------------- --></div>
+
 
 
 ### 1.1 __GET__ Method
@@ -54,7 +54,7 @@ This must return a `HTTP status code 405: method not allowed` if the client was 
 
 ### 2.1 Credentials object
 
-<div><!-- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ --></div>
+
 | Property                 | Type                                                         | Card.  | Description                                                        |
 |--------------------------|--------------------------------------------------------------|--------|--------------------------------------------------------------------|
 | token                    | [string](types.md#15-string-type)(64)                        | 1      | The token for the other party to authenticate in your system.      |
@@ -62,7 +62,7 @@ This must return a `HTTP status code 405: method not allowed` if the client was 
 | business_details         | [BusinessDetails](mod_locations.md#41-businessdetails-class) | 1      | Details of the other party.                                        |
 | party_id                 | [string](types.md#15-string-type)(3)                         | 1      | CPO or eMSP ID of this party. (following the 15118 ISO standard).  |
 | country_code             | [string](types.md#15-string-type)(2)                         | 1      | Country code of the country this party is operating in.            |
-<div><!-- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ --></div>
+
 
 The `party_id` and `country_code` are provided here to inform a server about the `party_id` and `country_code` a client will use when pushing [client owned objects](transport_and_format.md#client-owned-object-push). This helps a server determine the URLs a client will use when pushing a [client owned object](transport_and_format.md#client-owned-object-push). 
 The `country_code` is added the make certain the URL used when pushing a [client owned object](transport_and_format.md#client-owned-object-push) is unique, there might be multiple parties in the world with the same `party_id`, but the combination should always be unique.

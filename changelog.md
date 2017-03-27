@@ -2,7 +2,7 @@
 
 ## Changes between OCPI 2.0 and 2.1
 
-<div><!-- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ --></div>
+
 | Context (Module / Object)                      | Expected Impact: eMSP / CPO | Expected Effort: eMSP / CPO | Description                                                                        | 
 |------------------------------------------------|-----------------------------|-----------------------------|------------------------------------------------------------------------------------|
 | CDRs / CDR object                              | Major / Major               | Minimal / Minimal           | replaced field: "total_usage" with: "total_energy", "total_time" and "total_parking_time"                                                                                           |
@@ -39,4 +39,4 @@
 | Version information / Custom Modules           | Optional / Optional         | Average / Average           | added description on how to add custom/customized modules to OCPI.                                                                                                                  |
 | Version information / Version class            | Minor / Minor               | Minimal / Minimal           | OCPI Version changed from OCPI decimal to VersionNumber enum.                                                                                                                       |
 | Version information / Version details endpoint | Minor / Minor               | Minimal / Minimal           | OCPI Version changed from OCPI decimal to VersionNumber enum.                                                                                                                       |
-<div><!-- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ --></div>
+

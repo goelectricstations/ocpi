@@ -11,30 +11,30 @@ of the different modules and version of OCPI that have been implemented.
 
 Both the CPO and the eMSP must have this endpoint.
 
-<div><!-- ---------------------------------------------------------------------------- --></div>
+
 | Method   | Description                                                             |
 | -------- | ----------------------------------------------------------------------- |
 | GET      | Fetch information about the supported versions.                         |
-<div><!-- ---------------------------------------------------------------------------- --></div>
+
 
 
 ## Data
 
-<div><!-- ---------------------------------------------------------------------------- --></div>
+
 | Property  | Type                       | Card.  | Description                               |
 |-----------|----------------------------|--------|-------------------------------------------|
 | versions  | [Version](#version-class)  | +      | A list of supported OCPI versions.        |
-<div><!-- ---------------------------------------------------------------------------- --></div>
+
 
 
 ### Version *class*
 
-<div><!-- ---------------------------------------------------------------------------- --></div>
+
 | Property | Type                                 | Card. | Description                               |
 |----------|--------------------------------------|-------|-------------------------------------------|
 | version  | [VersionNumber](#versionnumber-enum) | 1     | The version number.                       |
 | url      | [URL](types.md#16-url-type)          | 1     | URL to the endpoint containing version specific information. |
-<div><!-- ---------------------------------------------------------------------------- --></div>
+
 
 
 ## GET
@@ -65,38 +65,38 @@ This endpoint lists the supported endpoints and their URLs for a specific OCPI v
 
 Both the CPO and the eMSP must have this endpoint.
 
-<div><!-- ---------------------------------------------------------------------------- --></div>
+
 | Method   | Description                                                             |
 | -------- | ----------------------------------------------------------------------- |
 | GET      | Fetch information about the supported endpoints for this version.       |
-<div><!-- ---------------------------------------------------------------------------- --></div>
+
 
 
 ## Data
 
-<div><!-- ---------------------------------------------------------------------------- --></div>
+
 | Property   | Type                                  | Card.  | Description                                      |
 |------------|---------------------------------------|--------|--------------------------------------------------|
 | version    | [VersionNumber](#versionnumber-enum)  | 1      | The version number.                              |
 | endpoints  | [Endpoint](#endpoint-class)           | +      | A list of supported endpoints for this version.  |
-<div><!-- ---------------------------------------------------------------------------- --></div>
+
 
 
 ### Endpoint *class*
 
-<div><!-- ---------------------------------------------------------------------------- --></div>
+
 | Property    | Type                         | Card.  | Description                               |
 |-------------|------------------------------|--------|-------------------------------------------|
 | identifier  | [ModuleID](#moduleid-enum)   | 1      | Endpoint identifier.                      |
 | url         | [URL](types.md#16-url-type)  | 1      | URL to the endpoint.                      |
-<div><!-- ---------------------------------------------------------------------------- --></div>
+
 
 
 ### ModuleID *enum*
 
 The Module identifiers for each endpoint are in the beginning of each *Module* chapter. The following table contains the list of modules in this version of OCPI. Most modules (except [Credentials & registration](credentials.md#credentials-endpoint)) are optional, but there might be dependencies between modules, if so that will be mentioned in the module description.
 
-<div><!-- ------------------------------------------------------------------------------------------------------------------------------------------------------ --></div>
+
 | Module                                                            | ModuleID      | Remark                                                           |
 |-------------------------------------------------------------------|---------------|------------------------------------------------------------------|
 | [CDRs](mod_cdrs.md#cdrs-module)                                   | cdrs          | &nbsp;                                                           |
@@ -106,7 +106,7 @@ The Module identifiers for each endpoint are in the beginning of each *Module* c
 | [Sessions](mod_sessions.md#sessions-module)                       | sessions      | &nbsp;                                                           |
 | [Tariffs](mod_tariffs.md#tariffs-module)                          | tariffs       | &nbsp;                                                           |
 | [Tokens](mod_tokens.md#tokens-module)                             | tokens        | &nbsp;                                                           |
-<div><!-- ----------------------------------------------------------------------------------------------------------------------------------------------------- --></div>
+
 
 <!--
   Add some whitelines for PDF generation fix, TODO check in new PDf versions 
@@ -126,12 +126,12 @@ The Module identifiers for each endpoint are in the beginning of each *Module* c
 
 List of known versions.
 
-<div><!-- ---------------------------------------------------------------------------- --></div>
+
 | Value    | Description                         |
 |----------|-------------------------------------|
 | 2.0      | OCPI version 2.0.                   |
 | 2.1      | OCPI version 2.1. (this version)    |
-<div><!-- ---------------------------------------------------------------------------- --></div>
+
 
 
 #### Custom Modules
