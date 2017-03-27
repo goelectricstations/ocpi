@@ -60,11 +60,11 @@ perl -p -i -e 's/(?<=\(#)(\w+)_(\w+)\)/\1-\2)/g' all.md
 
 
 pandoc \
-  --template=pandoc-default-template.latex \
+  --template=ocpi.latex \
   -V mainfont="Times"  -V fontsize=10pt --number-sections \
   -V geometry:margin=1in -V papersize:"a4paper" \
   -V title-meta:"Open Charge Point Interface $PROTOCOL_VERSION" -V title:"OCPI $PROTOCOL_VERSION" \
   -V subtitle:"Open Charge Point Interface $PROTOCOL_VERSION, document version: $DOCUMENT_VERSION"\
   -V author:"https://github.com/ocpi" \
   -V author-meta:"OCPI group" -V date:"$RELEASE_DATE" \
-  --include-in-header ocpi-header.tex --toc -f markdown_github -t latex all.md -o "$OUTFILE" --latex-engine="$LATEX_ENGINE"
+  -V documentclass=report --toc -f markdown_github -t latex all.md -o "$OUTFILE" --latex-engine="$LATEX_ENGINE"
